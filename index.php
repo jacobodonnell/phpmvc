@@ -1,22 +1,7 @@
 <?php
 
-function dump($var): void
-{
-    echo "<pre>";
-    print_r($var);
-    echo "</pre>";
-}
+require 'src/controllers/products.php';
 
-$config = require_once "./config.php";
-$dsn = $config['dsn'];
+$controller = new Products();
 
-$pdo = new PDO($dsn, $config['dbUser'], $config['dbPassword'], [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-]);
-
-$stmt = $pdo->query("SELECT * FROM product");
-
-$product = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-dump($product);
+$controller->index();
