@@ -1,7 +1,10 @@
 <?php
 
-require 'src/controllers/products.php';
+$action = $_GET['action'];
+$controller = $_GET['controller'];
 
-$controller = new Products();
+require "src/controllers/$controller.php";
 
-$controller->index();
+$controller_object = new $controller;
+
+$controller_object->$action();
