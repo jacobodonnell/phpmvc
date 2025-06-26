@@ -4,17 +4,17 @@ class Products
 {
     public function index()
     {
-        require 'src/models/product.php';
+        require BASE_PATH . '/src/models/product.php';
 
         $model = new Product();
 
         $products = $model->getData();
 
-        require 'views/products_index.php';
+        require BASE_PATH . '/views/products_index.php';
     }
 
     public function show()
     {
-        require 'views/products_show.php';
+        require BASE_PATH . '/views/products_show.php';
     }
 }

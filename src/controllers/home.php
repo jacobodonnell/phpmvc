@@ -4,6 +4,6 @@ class Home
 {
     public function index()
     {
-        require 'views/home_index.php';
+        require BASE_PATH . '/views/home_index.php';
     }
 }

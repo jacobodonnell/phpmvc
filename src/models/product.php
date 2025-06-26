@@ -4,7 +4,7 @@ class Product
 {
     public function getData(): array
     {
-        $config = require __DIR__ . '/../../config.php';
+        $config = require BASE_PATH . '/config.php';
         $dsn = $config['dsn'];
 
         $pdo = new PDO($dsn, $config['dbUser'], $config['dbPassword'], [
