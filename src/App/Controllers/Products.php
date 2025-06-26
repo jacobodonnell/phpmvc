@@ -1,12 +1,14 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Models\Product;
+
 class Products
 {
     public function index()
     {
-        require BASE_PATH . '/src/models/product.php';
-
-        $model = new Product();
+        $model = new Product;
 
         $products = $model->getData();
 
